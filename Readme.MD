@@ -38,4 +38,14 @@ npm install
 * You can see the hits to your server and any errors on the terminal you ran `supervisor` from.
 * If things go badly, just kill it with ctrl+c and start it up again.
 
+* If you want to use this with github pages or some other static hosting provider, do this to get phaser.js into your actual files:
+```
+cd public
+rm phaser
+mkdir phaser
+cp ../node_modules/phaser-ce/build/phaser.js phaser/
+```
+Then either put just the contents of the public folder on your host, or if using github pages, go to https://USERNAME.github.io/phasergame/public/
+* You might also need to take the line loading reload.js out of index.html. It is not required for your game to work.
+
 TODO: Windows? yowzah!
