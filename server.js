@@ -19,7 +19,6 @@ var logger = require('morgan');
 var app = express();
 
 var publicDir = path.join(__dirname, 'public');
-var phaserDir = path.join(__dirname, 'node_modules/phaser-ce/build/');
 
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
@@ -30,7 +29,6 @@ app.get('/', function (req, res) {
 });
 
 app.use('/', express.static(publicDir));
-app.use('/phaser', express.static(phaserDir));
 
 var server = http.createServer(app);
 
